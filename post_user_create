@@ -1,0 +1,14 @@
+#!/bin/bash
+
+user=$1
+
+sudo mkdir -p /home/yunohost.multimedia/$user
+sudo mkdir -p /home/yunohost.multimedia/$user/Music
+sudo mkdir -p /home/yunohost.multimedia/$user/Picture
+sudo mkdir -p /home/yunohost.multimedia/$user/Video
+sudo mkdir -p /home/yunohost.multimedia/$user/Video/sous-dossier1	# Dossier à définir
+sudo mkdir -p /home/yunohost.multimedia/$user/Video/sous-dossier2	# Dossier à définir
+# Création du lien symbolique dans le home de l'utilisateur.
+sudo ln -sf /home/yunohost.multimedia/$user /home/$user/Multimedia
+# Propriétaires des dossiers utilisateurs.
+sudo chown -R $user:multimedia /home/yunohost.multimedia/$user
