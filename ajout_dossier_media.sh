@@ -11,16 +11,12 @@ GROUPE_MEDIA=multimedia
 DOSSIER_MEDIA=/home/yunohost.multimedia
 
 # Ajout d'un lien symbolique vers le dossier à partager
-sudo ln -sf "$1" "$DOSSIER_MEDIA/share/$2"
+sudo ln -sfn "$1" "$DOSSIER_MEDIA/share/$2"
 
-# Modification du groupe du dossier partagé.
-sudo chgrp -R $GROUPE_MEDIA "$1"
-
-## Application du setgid et du umask sur l'ensemble du dossier.
-# Droits génériques sur les dossiers et fichiers: root:multimedia rwXrwsr-X
-# Lecture/écriture éxecution (sur les dossiers) pour le propriétaire.
-# Lecture/écriture setgid pour le groupe. Le setgid fixera le groupe pour tout nouveau fichier ou dossier créé.
-# Lecture éxecution (sur les dossiers) pour les autres.
-sudo chmod -R u=rwx,g=rwXs,o=rX "$1"
-# Afin de garantir le droit d'écriture du groupe multimedia sur tout les fichiers créés. On place un ACL par défaut sur le groupe et sur other avec l'argument d.
-sudo setfacl -R -m d:g:$GROUPE_MEDIA:rwX,o:r-X "$1"
+## Application des droits étendus sur le dossier ajouté
+# Droit d'écriture pour le groupe et le groupe multimedia en acl et droit de lecture pour other:
+sudo setfacl -RnL -m g:$GROUPE_MEDIA:rwX,g::rwX,o:r-X "$1"
+# Application de la même règle que précédemment, mais par défaut pour les nouveaux fichiers.
+sudo setfacl -RnL -m d:g:$GROUPE_MEDIA:rwX,g::rwX,o:r-X "$1"
+# Réglage du masque par défaut. Qui garantie (en principe...) un droit maximal à rwx. Donc pas de restriction de droits par l'acl.
+sudo setfacl -RL -m m::rwx "$1"
