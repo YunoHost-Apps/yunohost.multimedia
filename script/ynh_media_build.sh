@@ -49,5 +49,5 @@ then
 fi
 
 ## Copie du script dans le répertoire $DOSSIER_MEDIA pour un usage manuel. Recréation des dossiers ou remise en place des droits sur les fichiers.
-sudo cp ./ynh_media_build.sh "$DOSSIER_MEDIA"
+sudo cp ./yunohost.multimedia-master/script/ynh_media_build.sh "$DOSSIER_MEDIA"
 sudo chmod +x "$DOSSIER_MEDIA/ynh_media_build.sh"
