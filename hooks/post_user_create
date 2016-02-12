@@ -8,8 +8,6 @@ sudo mkdir -p "$DOSSIER_MEDIA/$user"
 sudo mkdir -p "$DOSSIER_MEDIA/$user/Music"
 sudo mkdir -p "$DOSSIER_MEDIA/$user/Picture"
 sudo mkdir -p "$DOSSIER_MEDIA/$user/Video"
-sudo mkdir -p "$DOSSIER_MEDIA/$user/Video/sous-dossier1"	# Dossier à définir
-sudo mkdir -p "$DOSSIER_MEDIA/$user/Video/sous-dossier2"	# Dossier à définir
 sudo ln -sfn "$DOSSIER_MEDIA/share" "$DOSSIER_MEDIA/$user/Share"
 # Création du lien symbolique dans le home de l'utilisateur.
 sudo ln -sfn "$DOSSIER_MEDIA/$user" "/home/$user/Multimedia"
