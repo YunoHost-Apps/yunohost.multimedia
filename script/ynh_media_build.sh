@@ -14,8 +14,6 @@ sudo mkdir -p "$DOSSIER_MEDIA/share"
 sudo mkdir -p "$DOSSIER_MEDIA/share/Music"
 sudo mkdir -p "$DOSSIER_MEDIA/share/Picture"
 sudo mkdir -p "$DOSSIER_MEDIA/share/Video"
-sudo mkdir -p "$DOSSIER_MEDIA/share/Video/Sous-dossier1"	# Dossier à définir
-sudo mkdir -p "$DOSSIER_MEDIA/share/Video/Sous-dossier2"	# Dossier à définir
 
 ## Création des dossiers utilisateurs
 while read user	#USER en majuscule est une variable système, à éviter.
@@ -24,8 +22,6 @@ do
 		sudo mkdir -p "$DOSSIER_MEDIA/$user/Music"
 		sudo mkdir -p "$DOSSIER_MEDIA/$user/Picture"
 		sudo mkdir -p "$DOSSIER_MEDIA/$user/Video"
-		sudo mkdir -p "$DOSSIER_MEDIA/$user/Video/Sous-dossier1"	# Dossier à définir
-		sudo mkdir -p "$DOSSIER_MEDIA/$user/Video/Sous-dossier2"	# Dossier à définir
 		sudo ln -sfn "$DOSSIER_MEDIA/share" "$DOSSIER_MEDIA/$user/Share"
 		# Création du lien symbolique dans le home de l'utilisateur.
 		sudo ln -sfn "$DOSSIER_MEDIA/$user" "/home/$user/Multimedia"
