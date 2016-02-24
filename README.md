@@ -55,6 +55,11 @@ Une application ayant besoin d'un droit d'écriture sur les médias doit s'ajout
 Une application peux avoir à utiliser son propre dossier de médias, pour diverses raisons, tout en gardant l'intérêt de permettre aux utilisateurs d'y accéder.
 Dans ce cas de figure, l'application peut utiliser le script ```ynh_media_addfolder.sh``` pour ajouter son dossier de médias au dossier Share. Le dossier, sans changer d'emplacement, deviendra ainsi accessible à l'ensemble des utilisateurs en lecture et en écriture.
 
-```sudo ./yunohost.multimedia-master/script/ynh_media_addfolder.sh "CHEMIN_DU_DOSSIER_À_PARTAGER" "NOM_DU_DOSSIER_DANS_SHARE"```
+    sudo ./yunohost.multimedia-master/script/ynh_media_addfolder.sh "CHEMIN_DU_DOSSIER_À_PARTAGER" "NOM_DU_DOSSIER_DANS_SHARE"
 
 *Ex: Transmission enregistre les téléchargements dans son propre dossier, mais il est intéressant pour les utilisateurs de pouvoir accéder à ces téléchargements. Et aux applications multimédias d'accéder aux médias téléchargés.*
+
+## Usage du dossier multimedia en ssh
+Pour ajouter ou supprimer simplement des fichiers multimédia via une connexion ssh, il peux être nécessaire d'ajouter l'user ssh au groupe multimédia. Cela permettra d'obtenir simplement un droit d'écriture sur l'ensemble des fichiers du dossier yunohost.multimedia.
+
+    sudo usermod -a -G multimedia SSH_USER
