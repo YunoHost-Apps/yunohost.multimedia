@@ -53,9 +53,11 @@ Une application ayant besoin d'un droit d'écriture sur les médias doit s'ajout
 
 ### Application utilisant un dossier propre, à mettre à disposition des utilisateurs:
 Une application peux avoir à utiliser son propre dossier de médias, pour diverses raisons, tout en gardant l'intérêt de permettre aux utilisateurs d'y accéder.
-Dans ce cas de figure, l'application peut utiliser le script ```ynh_media_addfolder.sh``` pour ajouter son dossier de médias au dossier Share. Le dossier, sans changer d'emplacement, deviendra ainsi accessible à l'ensemble des utilisateurs en lecture et en écriture.
+Dans ce cas de figure, l'application peut utiliser le script ```ynh_media_addfolder.sh``` pour ajouter son dossier de médias au dossier yunohost.multimedia. Le dossier deviendra ainsi accessible à l'ensemble des utilisateurs en lecture et en écriture.
 
-    sudo ./yunohost.multimedia-master/script/ynh_media_addfolder.sh "CHEMIN_DU_DOSSIER_À_PARTAGER" "NOM_DU_DOSSIER_DANS_SHARE"
+    sudo ./yunohost.multimedia-master/script/ynh_media_addfolder.sh --source="/CHEMIN/DU/DOSSIER/À/PARTAGER" --dest="CHEMIN/ET/NOM_DU_DOSSIER_DANS_YUNOHOST.MULTIMEDIA"
+L'usage normal du script ```ynh_media_addfolder.sh``` ne déplace pas le dossier de l'application, il créer un lien symbolique vers celui-ci.
+Il est toutefois possible d'inverser ce comportement avec l'argument ```--inv```. Dans ce cas, le dossier est déplacé et renommé dans ```dest```, tandis qu'un lien symbolique vient prendre la place du dossier de l'application.
 
 *Ex: Transmission enregistre les téléchargements dans son propre dossier, mais il est intéressant pour les utilisateurs de pouvoir accéder à ces téléchargements. Et aux applications multimédias d'accéder aux médias téléchargés.*
 

@@ -38,11 +38,12 @@ sudo setfacl -RnL -m d:g:$GROUPE_MEDIA:rwX,g::rwX,o:r-X "$DOSSIER_MEDIA"
 # Réglage du masque par défaut. Qui garantie (en principe...) un droit maximal à rwx. Donc pas de restriction de droits par l'acl.
 sudo setfacl -RL -m m::rwx "$DOSSIER_MEDIA"
 
-## Mise en place du hook pour l'ajout des dossiers des futurs utilisateurs
-if [ -e post_user_create ]
-then
+## Mise en place du hook pour l'ajout des dossiers des futurs utilisateurs et leur suppression
+# if [ -e post_user_create ]
+# then
 	sudo yunohost hook add ynh_media ../hooks/post_user_create
-fi
+	sudo yunohost hook add ynh_media ../hooks/post_user_delete
+# fi
 
 ## Copie du script dans le répertoire $DOSSIER_MEDIA pour un usage manuel. Recréation des dossiers ou remise en place des droits sur les fichiers.
 sudo cp ./yunohost.multimedia-master/script/ynh_media_build.sh "$DOSSIER_MEDIA"

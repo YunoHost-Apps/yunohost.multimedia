@@ -1,0 +1,8 @@
+#!/bin/bash
+
+user=$1
+DOSSIER_MEDIA=/home/yunohost.multimedia
+
+if [ test -n "$1" ] && [ -e "$DOSSIER_MEDIA/$user" ]; then
+    sudo rm -r "$DOSSIER_MEDIA/$user"
+fi
