@@ -41,8 +41,8 @@ sudo setfacl -RL -m m::rwx "$DOSSIER_MEDIA"
 ## Mise en place du hook pour l'ajout des dossiers des futurs utilisateurs et leur suppression
 # if [ -e post_user_create ]
 # then
-	sudo yunohost hook add ynh_media ../hooks/post_user_create
-	sudo yunohost hook add ynh_media ../hooks/post_user_delete
+	sudo yunohost hook add ynh_media ./yunohost.multimedia-master/hooks/post_user_create
+	sudo yunohost hook add ynh_media ./yunohost.multimedia-master/hooks/post_user_delete
 # fi
 
 ## Copie du script dans le répertoire $DOSSIER_MEDIA pour un usage manuel. Recréation des dossiers ou remise en place des droits sur les fichiers.
