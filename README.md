@@ -32,7 +32,7 @@ L'arborescence exacte de ce dossier est la suivante:
 Toutes les applications nécessitant un accès aux dossiers multimédias, quel que soit les droits qu'elles exigeront sur ceux-ci, doivent au préalable s'assurer de l'existence des dossiers multimédias.
 Pour cela, il suffit de télécharger le package et d'exécuter le script ```ynh_media_build.sh``` afin de construire et configurer les dossiers multimédias.
 
-    wget https://github.com/maniackcrudelis/yunohost.multimedia/archive/master.zip
+    wget -nv https://github.com/maniackcrudelis/yunohost.multimedia/archive/master.zip
     unzip master.zip
     sudo ./yunohost.multimedia-master/script/ynh_media_build.sh
 
