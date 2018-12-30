@@ -15,16 +15,19 @@ L'arborescence exacte de ce dossier est la suivante:
     *  Music
     * Picture
     * Video
+    * eBook
     * Share (lien symbolique sur le dossier /home/yunohost.multimedia/Share)
  * user2/
     * Music
     * Picture
     * Video
+    * eBook
     * Share
  * Share/
     * Music
     * Picture
     * Video
+    * eBook
 
 ## Usage du package par les applications multimédia
 
