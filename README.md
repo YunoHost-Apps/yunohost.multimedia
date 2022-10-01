@@ -1,6 +1,6 @@
 :warning: Multimedia directories helpers have been integrated into YunoHost core since its version 4.2.0.
 
-:warning: Les *helpers* pour les dossier multimédia ont été intégrés au coeur de YunoHost depuis sa version 4.2.0.
+:warning: Les *helpers* pour les dossiers multimédia ont été intégrés au coeur de YunoHost depuis sa version 4.2.0.
 
 ---
 
