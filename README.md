@@ -1,3 +1,9 @@
+:warning: Multimedia directories helpers have been integrated into YunoHost core since its version 4.2.0.
+
+:warning: Les *helpers* pour les dossier multimédia ont été intégrés au coeur de YunoHost depuis sa version 4.2.0.
+
+---
+
 # Dossiers multimédia pour Yunohost
 
 Ce package permet la centralisation des media de chaque utilisateurs ainsi que des médias partagés entre tout les utilisateurs.
